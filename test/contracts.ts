@@ -23,3 +23,7 @@ session.stop();
 scanner.normalize({ width: 1, height: 1, data: [0, 0, 0, 255] });
 // @ts-expect-error Policy thresholds must be numeric.
 createScanner({}, { minEdge: "500" });
+
+import { loadOpenCv, readPixels, encodeJpeg } from "../browser.js";
+const engine: Promise<{ cv: object }> = loadOpenCv("/engine.js");
+const blob: Promise<Blob> = encodeJpeg(readPixels(document.createElement("video")));
