@@ -15,7 +15,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "check": "node --check index.js && node --check vision.js && node --test test/*.test.js"
+    "check": "node --check index.js && node --check vision.js && node --check camera.js && node --test test/*.test.js"
   },
   "devDependencies": {
     "@techstark/opencv-js": "4.12.0-release.1"
