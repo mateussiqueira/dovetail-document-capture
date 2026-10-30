@@ -27,6 +27,8 @@ test("policy rejects invalid or unknown thresholds and keeps independent consume
     { minLuma: 250, maxLuma: 200 },
     { maxLuma: 256 },
     { unknown: 1 },
+    { constructor: 1 },
+    { toString: 1 },
   ])
     assert.throws(() => capturePolicy(input), TypeError);
   const relaxed = capturePolicy({ minEdge: 100 });

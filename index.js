@@ -19,7 +19,7 @@ export const defaults = Object.freeze({
 export function capturePolicy(input = {}) {
   const p = { ...defaults, ...input };
   if (
-    Object.keys(p).some((key) => !(key in defaults) || !Number.isFinite(p[key]) || p[key] < 0) ||
+    Object.keys(p).some((key) => !Object.hasOwn(defaults, key) || !Number.isFinite(p[key]) || p[key] < 0) ||
     p.margin >= 0.5 ||
     p.minArea > 1 ||
     p.minEdge < 1 ||
